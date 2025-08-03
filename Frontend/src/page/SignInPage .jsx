@@ -25,7 +25,7 @@ const SignInPage = () => {
     setError("");
 
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/register", form);
+      const res = await axios.post("https://python-todo-v6s1.onrender.com/api/auth/register", form);
       console.log(res.data);
       localStorage.setItem("token", res.data.token);
       toast.success('Register Successfully! ', {

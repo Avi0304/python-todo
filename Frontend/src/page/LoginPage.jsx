@@ -65,7 +65,7 @@ const LoginPage = () => {
     setError("");
 
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", form);
+      const res = await axios.post("https://python-todo-v6s1.onrender.com/api/auth/login", form);
       localStorage.setItem("token", res.data.token);
       toast.success('Login Successfully! ', {
         position: "top-right",

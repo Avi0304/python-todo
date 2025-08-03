@@ -16,7 +16,7 @@ const TodoPage = () => {
     const fetchTodos = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://localhost:5000/api/todos/", {
+        const res = await axios.get("https://python-todo-v6s1.onrender.com/api/todos/", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -34,7 +34,7 @@ const TodoPage = () => {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.post(
-        "http://localhost:5000/api/todos/",
+        "https://python-todo-v6s1.onrender.com/api/todos/",
         { task },
         {
           headers: {
@@ -64,7 +64,7 @@ const TodoPage = () => {
   const deleteTodo = async (id) => {
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`http://localhost:5000/api/todos/${id}`, {
+      await axios.delete(`https://python-todo-v6s1.onrender.com/api/todos/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -79,7 +79,7 @@ const TodoPage = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.put(
-        `http://localhost:5000/api/todos/${id}`,
+        `https://python-todo-v6s1.onrender.com/api/todos/${id}`,
         { task: newText },
         {
           headers: {
@@ -105,7 +105,7 @@ const TodoPage = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.put(
-        `http://localhost:5000/api/todos/${id}`,
+        `https://python-todo-v6s1.onrender.com/api/todos/${id}`,
         { done: !todoToToggle.done },
         {
           headers: {
