@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { User, Lock, Facebook, Chrome, X } from "lucide-react";
 import axios from "axios";
@@ -15,6 +15,10 @@ const SignInPage = () => {
   const navigate = useNavigate();
   const [form, setForm] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    document.title = 'Sign Up - Todo App';
+  }, [])
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.id]: e.target.value });

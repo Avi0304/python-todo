@@ -3,7 +3,7 @@ import { Trash2, List, CheckSquare, Pencil } from "lucide-react";
 
 const TodoCard = ({ todo, onToggle, onDelete, onEdit }) => {
   const [isEditing, setIsEditing] = useState(false);
-  const [editedText, setEditedText] = useState(todo.text);
+  const [editedText, setEditedText] = useState(todo.task);
 
   const handleSaveEdit = () => {
     if (editedText.trim() !== "") {

@@ -13,6 +13,9 @@ const TodoPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+
+    document.title = 'My Todos - Todo App';
+
     const fetchTodos = async () => {
       try {
         const token = localStorage.getItem("token");
@@ -21,6 +24,8 @@ const TodoPage = () => {
             Authorization: `Bearer ${token}`,
           },
         });
+        console.log("TOdo is: ", res.data);
+
         setTodos(res.data || []);
       } catch (error) {
         console.error("Error fetching todos:", error.response?.data || error.message);
@@ -93,6 +98,17 @@ const TodoPage = () => {
           todo.id === id ? { ...todo, task: newText } : todo
         )
       );
+      toast.success('Update Successfully! ', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
     } catch (error) {
       console.error("Error editing todo:", error.response?.data || error.message);
     }
@@ -126,7 +142,20 @@ const TodoPage = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("token")
-    navigate("/login")
+    toast.success('Logout Successfully! ', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
+    setTimeout(() => {
+      navigate("/login")
+    }, 3000);
   }
 
   return (

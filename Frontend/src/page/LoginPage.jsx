@@ -16,6 +16,7 @@ const LoginPage = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
+    document.title = 'Login - Todo App';
     if (window.google) {
       window.google.accounts.id.initialize({
         client_id: "147226171626-o5huu49rfq2r3kh7t0j3ht6fuap54l4g.apps.googleusercontent.com",
