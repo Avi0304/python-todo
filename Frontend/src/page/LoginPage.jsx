@@ -33,7 +33,7 @@ const LoginPage = () => {
 
   const handleGoogleResponse = async (response) => {
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/google-login", {
+      const res = await axios.post("https://python-todo-v6s1.onrender.com/api/auth/google-login", {
         credential: response.credential,
       });
       localStorage.setItem("token", res.data.token);
