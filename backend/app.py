@@ -14,7 +14,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 app.config['JWT_SECRET_KEY'] = os.getenv('JWT_SECRET_KEY')
 
 # ✅ Enable CORS for frontend origin
-CORS(app, origins=["http://localhost:5173"], supports_credentials=True)
+CORS(app, origins=["https://python-todo.vercel.app"], supports_credentials=True)
 
 db.init_app(app)
 jwt = JWTManager(app)
